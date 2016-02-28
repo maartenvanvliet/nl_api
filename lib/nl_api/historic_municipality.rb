@@ -1,19 +1,22 @@
-class NlApi::Municipality
-  attr_reader :code, :name, :province_name, :province_code
+class NlApi::HistoricMunicipality
+  attr_reader :code, :name, :code_after_merge
 
   def initialize(attributes)
     @code = attributes[:code]
     @name = attributes[:name]
-    @province_name = attributes[:province_name]
-    @province_code = attributes[:province_code]
+    @code_after_merge = attributes[:code_after_merge]
   end
 
   def province
-    self.class.provinces[province_code] ||= NlApi::Province.new(province_code, province_name)
+    municipality_after_merge.province
   end
 
-  def merged_municipalities
-    NlApi::HistoricMunicipality.find_all_by(code_after_merge: code)
+  def municipality_after_merge
+    has_merged? ? NlApi::Municipality.find_by(code: code_after_merge) : nil
+  end
+
+  def has_merged?
+    !!code_after_merge
   end
 
   class << self
@@ -21,10 +24,9 @@ class NlApi::Municipality
     require 'csv'
 
     attr_writer :filename
-    attr_writer :provinces
 
     def filename
-      @filename ||= '../../data/gemeentenalfabetisch2016.csv'
+      @filename ||= '../../data/BAG_gemeententabel.csv'
     end
 
     def path
@@ -32,17 +34,12 @@ class NlApi::Municipality
     end
 
     def read_csv
-      @store ||= CSV.read(path, headers: true, col_sep: ';').map{ |line|
-      NlApi::Municipality.new(
+      @store ||= CSV.read(path, headers: true, col_sep: ',').map{ |line|
+      NlApi::HistoricMunicipality.new(
         code: line[0].to_i,
         name: line[1],
-        province_name: line[2],
-        province_code: line[3].to_i
+        code_after_merge: line[2].to_i
       ) }
-    end
-
-    def provinces
-      @provinces ||= {}
     end
 
     def all
