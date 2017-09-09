@@ -208,6 +208,7 @@ Gemeentecode;Gemeentenaam;Provincienaam;Provinciecode
 0025;Marum;Groningen;20
 0420;Medemblik;Noord-Holland;27
 0938;Meerssen;Limburg;31
+1948;Meierijstad;Noord-Brabant;30
 1908;Menameradiel;Friesland;21
 1987;Menterwolde;Groningen;20
 0119;Meppel;Drenthe;22
@@ -285,13 +286,11 @@ Gemeentecode;Gemeentenaam;Provincienaam;Provinciecode
 0279;Scherpenzeel;Gelderland;25
 0606;Schiedam;Zuid-Holland;28
 0088;Schiermonnikoog;Friesland;21
-0844;Schijndel;Noord-Brabant;30
 0962;Schinnen;Limburg;31
 1676;Schouwen-Duiveland;Zeeland;29
 0965;Simpelveld;Limburg;31
 1702;Sint Anthonis;Noord-Brabant;30
 0845;Sint-Michielsgestel;Noord-Brabant;30
-0846;Sint-Oedenrode;Noord-Brabant;30
 1883;Sittard-Geleen;Limburg;31
 0610;Sliedrecht;Zuid-Holland;28
 0040;Slochteren;Groningen;20
@@ -308,7 +307,7 @@ Gemeentecode;Gemeentenaam;Provincienaam;Provinciecode
 0971;Stein;Limburg;31
 1904;Stichtse Vecht;Utrecht;26
 0617;Strijen;Zuid-Holland;28
-1900;Sœdwest-Frysl‰n;Friesland;21
+1900;S�dwest-Frysl�n;Friesland;21
 0715;Terneuzen;Zeeland;29
 0093;Terschelling;Friesland;21
 0448;Texel;Noord-Holland;27
@@ -332,7 +331,6 @@ Gemeentecode;Gemeentenaam;Provincienaam;Provinciecode
 0047;Veendam;Groningen;20
 0345;Veenendaal;Utrecht;26
 0717;Veere;Zeeland;29
-0860;Veghel;Noord-Brabant;30
 0861;Veldhoven;Noord-Brabant;30
 0453;Velsen;Noord-Holland;27
 0983;Venlo;Limburg;31
