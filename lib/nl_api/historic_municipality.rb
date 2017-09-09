@@ -34,12 +34,13 @@ class NlApi::HistoricMunicipality
     end
 
     def read_csv
-      @store ||= CSV.read(path, headers: true, col_sep: ',').map{ |line|
-      NlApi::HistoricMunicipality.new(
-        code: line[0].to_i,
-        name: line[1],
-        code_after_merge: line[2].to_i
-      ) }
+      @store ||= CSV.read(path, headers: true, col_sep: ',').map do |line|
+        NlApi::HistoricMunicipality.new(
+          code: line[0].to_i,
+          name: line[1],
+          code_after_merge: line[2].to_i
+        )
+      end
     end
 
     def all

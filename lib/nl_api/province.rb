@@ -1,5 +1,4 @@
 class NlApi::Province
-
   attr_accessor :province_code, :province_name
 
   def initialize(province_code, province_name)
@@ -8,7 +7,7 @@ class NlApi::Province
   end
 
   def municipalities
-    @municipalities ||= NlApi::Municipality.find_all_by(province_code: province_code)
+    @municipalities ||=
+      NlApi::Municipality.find_all_by(province_code: province_code)
   end
-
 end

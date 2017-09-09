@@ -32,13 +32,14 @@ class NlApi::Municipality
     end
 
     def read_csv
-      @store ||= CSV.read(path, headers: true, col_sep: ';').map{ |line|
-      NlApi::Municipality.new(
-        code: line[0].to_i,
-        name: line[1],
-        province_name: line[2],
-        province_code: line[3].to_i
-      ) }
+      @store ||= CSV.read(path, headers: true, col_sep: ';').map do |line|
+        NlApi::Municipality.new(
+          code: line[0].to_i,
+          name: line[1],
+          province_name: line[2],
+          province_code: line[3].to_i
+        )
+      end
     end
 
     def provinces
@@ -58,14 +59,14 @@ class NlApi::Municipality
       field = where.keys.first
       value = where.values.first
 
-      find{ |i| i.send(field.to_sym) == value }
+      find { |i| i.send(field.to_sym) == value }
     end
 
     def find_all_by(where)
       field = where.keys.first
       value = where.values.first
 
-      find_all{ |i| i.send(field.to_sym) == value }
+      find_all { |i| i.send(field.to_sym) == value }
     end
   end
 end
