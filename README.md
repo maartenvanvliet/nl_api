@@ -2,6 +2,10 @@
 
 CBS data on Dutch municipalities packaged as simple gem
 
+Sources:
+* [Historic municipality data](http://publicaties.rvig.nl/Landelijke_tabellen/Landelijke_tabellen_32_t_m_60_excl_tabel_35/Landelijke_Tabellen_32_t_m_60_in_csv_formaat)
+* [Current data](https://www.cbs.nl/nl-nl/onze-diensten/methoden/classificaties/overig/gemeentelijke-indelingen-per-jaar/indeling%20per%20jaar/gemeentelijke-indeling-op-1-januari-2017)
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -55,9 +59,10 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
   - v1.1 Add class to deal with no longer existing municipalities
   - v1.0 first release
+
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/nl_api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/maartenvanvliet/nl_api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
